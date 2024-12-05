@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Happiness Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <header>
+        <h1>World Happiness Explorer</h1>
+    </header>
+
+    <main>
+        <!-- Sidebar -->
+        <nav>
+            <a href="#about">About</a>
+            <a href="#dataset">Dataset</a>
+            <a href="#visualizations">Visualizations</a>
+            <a href="#insights">Insights</a>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+            <section id="about">
+                <h2>About this Project</h2>
+                <p>This project delves into the factors influencing global happiness, using data from the <b>World Happiness Report (2019)</b> to analyze and visualize happiness trends across countries. The report ranks countries annually based on their citizens' overall well-being, and this project highlights key insights from the dataset to better understand the drivers of happiness.</p>
+                <h3>Tech Stacks used:</h3>
+                <ul>
+                    <li>Html</li>
+                    <li>CSS</li>
+                    <li>R</li>
+                    <li>Quarto</li>
+                </ul>
+                
+            </section>
+
+            <section id="dataset">
+                <h2>Preview of the dataset</h2>
+                <img src="datasetss.png" alt="Preview of the dataset" width="890" height="300">
+            </section>
+
+            <section id="visualizations">
+                <h2>Data Visualizations</h2>
+                <div id="charts">
+                    <h3>Visualization 1: Bar Chart of Top 15 Happiest Countries</h3>
+                    <p><img src="http://localhost:7752/happiness-visualizations_files/figure-html/Bar_chart-1.png"
+                            class="img-fluid figure-img" width="672"></p>
+                    <h3>Visualization 2: Scatter Plot of GDP per Capita vs Happiness</h3>
+                    <p><img src="http://localhost:7752/happiness-visualizations_files/figure-html/Scatter_plot-1.png"
+                            class="img-fluid figure-img" width="672"></p>
+                </div>
+            </section>
+
+            <section id="insights">
+                <h2>Key Insights</h2>
+                <h3>Insights from Visualization 1</h3>
+                <ul>
+                    <li>Finland- highest happiness score</li>
+                    <li>Denmark, Norway, and Iceland- very close rankings</li>
+                    <li>Non-European countries like New Zealand, Canada, Australia also feature</li>
+                    <li>Happiness scores- closely packed</li>
+                </ul>
+                <h3>Insights from Visualization 2</h3>
+                <ul>
+                    <li>Positive relationship between GDP per capita and happiness scores</li>
+                    <li>Fitted regression line- strong linear relationship between economic wealth (GDP
+                        per capita) and happiness</li>
+                    <li>Countries with lower GDP per capita still achieve relatively high happiness scores</li>
+                    <li>GDP per capita- significant role in explaining variations in happiness</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created by Deepika Ganesan | Powered by HTML, CSS, R, and Quarto</p>
+    </footer>
+</body>
+
+</html>
