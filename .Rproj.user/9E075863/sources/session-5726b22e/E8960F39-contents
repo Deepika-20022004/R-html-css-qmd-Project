@@ -10,6 +10,14 @@ css: "styles.css"
 
 This report provides an analysis of the \`mtcars\` dataset, including tables and charts.
 
+## Data Preview
+
+Here is a preview of the mtcars dataset:
+
+```{r echo=FALSE}
+head(mtcars)
+```
+
 ## Data Summary Table
 
 The table below shows summary statistics (mean and standard deviation) for each variable in the dataset:
