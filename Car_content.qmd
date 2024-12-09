@@ -1,0 +1,112 @@
+---
+title: "Car Dataset Analysis"
+author: "Deepika Ganesan"
+format: html
+editor: visual
+css: "styles.css"
+---
+
+## Data Summary Report
+
+This report provides an analysis of the \`mtcars\` dataset, including tables and charts.
+
+## Data Summary Table
+
+The table below shows summary statistics (mean and standard deviation) for each variable in the dataset:
+
+```{r include=FALSE}
+# Load necessary library
+library(dplyr)
+
+# Rename columns 
+mtcars_renamed <- mtcars %>%
+  rename(
+    Miles_per_Gallon = mpg,
+    Cylinders = cyl,
+    Displacement = disp,
+    Horsepower = hp,
+    Rear_Axle_Ratio = drat,
+    Weight = wt,
+    Quarter_Mile_Time = qsec,
+    Engine_Shape = vs,
+    Transmission = am,
+    Gears = gear,
+    Carburetors = carb
+  )
+
+# Generate summary statistics
+summary_table <- mtcars_renamed %>%
+  summarise(across(everything(), list(mean = mean, sd = sd)))
+```
+
+```{r echo=FALSE}
+# Display table using knitr
+knitr::kable(summary_table, format = "html", table.attr = "class='styled-table'")
+```
+
+## Charts
+
+### Scatter Plot
+
+```{r echo=FALSE}
+# Load necessary library
+library(ggplot2)
+
+# Generate the plot
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "#FF6F61", size = 3) +
+  geom_smooth(method = "lm", color = "#1B9E77", se = FALSE) +
+  theme_minimal() +
+  labs(title = "Miles Per Gallion vs Weight",
+       x = "Weight (1000 lbs)",
+       y = "Miles per Gallon") +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", color = "#FF6F61", hjust = 0.5),
+    axis.title = element_text(size = 14, color = "#333"),
+    axis.text = element_text(size = 12, color = "#333"),
+    axis.ticks = element_blank(),
+    panel.grid.major = element_line(color = "#ddd"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+### Bar Chart
+
+```{r echo=FALSE}
+# Generate the bar chart: Cylinders vs. Miles per Gallon (MPG)
+ggplot(mtcars_renamed, aes(x = factor(Cylinders), y = Miles_per_Gallon, fill = factor(Cylinders))) +
+  geom_bar(stat = "summary", fun = "mean", position = "dodge", show.legend = FALSE) +
+  scale_fill_manual(values = c("#FF6F61", "#FFB84D", "#00A5A7", "#FFD700", "#1B9E77")) +
+  theme_minimal() +
+  labs(
+    title = "Average Miles per Gallon vs Number of Cylinders",
+    x = "Number of Cylinders",
+    y = "Average Miles per Gallon (MPG)"
+  ) +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", color = "#FF6F61", hjust = 0.5),
+    axis.title = element_text(size = 14, color = "#333"),
+    axis.text = element_text(size = 12, color = "#333"),
+    axis.ticks = element_blank(),
+    panel.grid.major = element_line(color = "#ddd"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Insights
+
+### Scatter Plot
+
+-   Negative correlation between weight and fuel efficiency.
+
+-   Lighter vehicles are more fuel-efficient.
+
+-   Other factors also influence fuel efficiency.
+
+### Bar Chart
+
+-   More cylinders, lower fuel efficiency.
+
+-   4-cylinder engines are most fuel-efficient.
+
+-   8-cylinder engines are least fuel-efficient.
