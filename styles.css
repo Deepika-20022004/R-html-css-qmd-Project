@@ -1,0 +1,152 @@
+/* General page styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right,#82a4ec, #bfdff7,white);
+    margin: 20px;
+    padding: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Headings */
+h1, h2, h3{
+    color: #f71717;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Paragraphs */
+p {
+    color: blue;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* Table styling */
+.styled-table {
+    width: 100%;
+    margin: 25px 0;
+    font-size: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Table Header */
+.styled-table thead tr {
+    background-color: #1B9E77;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Table Cells */
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid black;
+
+}
+
+/* Alternating Row Colors */
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* Hover Effect */
+.styled-table tbody tr:hover {
+    background-color: #eaf7f7;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Table Footer */
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}
+
+/* Chart and Figure Container */
+figure {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Chart Title */
+figure figcaption {
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+/* Buttons (if needed) */
+button {
+    display: inline-block;
+    background-color: #FF6F61;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e0554d;
+    transform: translateY(-2px);
+}
+
+/* Links */
+a {
+    color: #1B9E77;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #11764b;
+}
+
+/* Code block styling */
+code {
+    background: #eaf7f7;
+    color: #1B9E77;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+/* Highlight Box */
+.highlight {
+    background: #fdf5f1;
+    border-left: 4px solid #FF6F61;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 15px 0;
+    font-style: italic;
+    font-size: 1em;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: #888;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
